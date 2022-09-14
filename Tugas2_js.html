@@ -1,0 +1,74 @@
+<h4>Nama  : Muhammad Andhika Bayu Prasetya</h4>
+<h4>Universitas Negeri Malang</h4>
+<h4>Mentor: Pak Henry</h4>
+
+<br>
+<h3 align="center">Daftar Pegawai Perusahaan X</h3>
+		<table align="center" cellpadding="10">
+			<thead>
+				<tr bgcolor="tomato">
+					<th>No</th>
+					<th>Nama</th>
+					<th>Jabatan</th>
+                    <th>Agama</th>
+                    <th>Gaji Pokok</th>
+                    <th>Tunjangan Jabatan</th>
+                    <th>Tunjangan Kesehatan</th>
+                    <th>Gaji Kotor</th>
+                    <th>Zakat Profesi</th>
+                    <th>Take Home Pay</th>
+				</tr>
+			</thead>
+			<tbody>
+                <script language="javascript">
+                var no, warna;
+                for(no = 1; no <= 100; no++){
+
+                    warna = (no % 2 == 0) ? 'blue' :'yellow';
+                    agama = (no % 2 == 0) ? 'Non Muslim' :'Muslim';
+                    
+                    if(no <= 25){
+                        jab = "Manager";
+                        gapok = 15000000;
+                    }
+                    else if(no >= 26 && no <= 50 ){
+                        jab = "Asisten Manager";
+                        gapok = 10000000;
+                    }
+                    else if(no >= 51 && no <= 75 ){
+                        jab = "Supervisor";
+                        gapok = 7000000;
+                    }
+                    else if(no >= 76){
+                        jab = "Staff";
+                        gapok = 4000000;
+                    }
+
+                    let tun_jab = 0.2 * gapok;
+                    let tun_kes = 0.1 * gapok;
+                    gakor = gapok + tun_jab + tun_kes;
+                    
+                    if(gakor >= 7000000 && agama == 'Muslim'){
+                        zakat = 0.025 * gakor;
+                    }else{
+                        zakat = 0;
+                    }
+                    
+                    pay = gakor - zakat;
+
+                    document.write(`<tr bgcolor="${warna}">
+                        <td>${no}</td>
+                        <td>Pegawai ${no}</td>
+                        <td>${jab}</td>
+                        <td>${agama}</td>
+                        <td>${gapok}</td>
+                        <td>${tun_jab}</td>
+                        <td>${tun_kes}</td>
+                        <td>${gakor}</td>
+                        <td>${zakat}</td>
+                        <td>${pay}</td>
+                    </tr>`);
+                }    
+                </script>
+			</tbody>
+		</table>_
