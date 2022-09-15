@@ -17,7 +17,7 @@
     <h3 align="center">Daftar Nilai Mahasiswa</h3>
             <table align="center" border="1" cellpadding="10">
                 <thead>
-                    <tr bgcolor="tomato">
+                    <tr bgcolor="grey">
                         <th>No</th>
                         <th>Nama</th>
                         <th>Nilai</th>
@@ -31,10 +31,12 @@
                     for(m of mahasiswa) { 
 
                         let ket = ( m.nilai >= 60) ? "Lulus" : "Gagal";
+                        warna = (no % 2 == 0) ? 'blue' :'yellow';
+                        
 
-                        if(m.nilai <= 70){
+                        if(m.nilai <= 60){
                             grade = 'D';
-                        }else if(m.nilai >= 71 && m.nilai <= 80){
+                        }else if(m.nilai >= 61 && m.nilai <= 80){
                             grade = 'C';
                         }else if(m.nilai >= 81 && m.nilai <= 90){
                             grade = 'B';
@@ -42,7 +44,7 @@
                             grade = 'A';
                         }
 
-                        document.write(`<tr bgcolor="" align="center">
+                        document.write(`<tr bgcolor="${warna}" align="center">
                             <td>${no++}</td>
                             <td>${m.nama}</td>
                             <td>${m.nilai}</td>
